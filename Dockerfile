@@ -7,5 +7,8 @@ WORKDIR /app
 RUN pip install -r requirements.txt
 #copying all the files to container
 COPY . /app
+
+#Exposing to particular
+EXPOSE 80
 #running the flask app
 CMD [ "python","./app.py"]
