@@ -8,7 +8,7 @@ on:
   push:
     branches: [ main ]
 env: 
-  IMAGE_NAME: 'salesprediction'
+  IMAGE_NAME: salesprediction
   
   
 
@@ -23,13 +23,13 @@ jobs:
       - name: Check Out Repo 
         uses: actions/checkout@v2
       - name: Build the Docker Image
-        run: docker build . --file Dockerfile --tag '${{env.IMAGE_NAME}}':latest
+        run: docker build . --file Dockerfile --tag ${{env.IMAGE_NAME}}:latest
       - name: Docker Login
         run: docker login --username '${{secrets.DOCKER_LOGIN}}' --password '${{secrets.DOCKER_PASSWORD}}'
       - name: Tag the Docker Image
-        run: docker tag '${{env.IMAGE_NAME}}':latest '${{env.IMAGE_NAME}}':latest
+        run: docker tag ${{env.IMAGE_NAME}}:latest ${{env.IMAGE_NAME}}:latest
       - name: Push the Docker Image
-        run: docker push '${{env.IMAGE_NAME}}':latest
+        run: docker push ${{env.IMAGE_NAME}}:latest
     
 
   
