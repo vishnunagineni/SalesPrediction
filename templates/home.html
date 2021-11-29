@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}HOME{% endblock %}
+
+{% block content %}
+
+<form method="POST" align='center' style="margin: 100;" action="/predict" enctype="multipart/form-data">
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="form-group">
+        <label for="query" style="color:indigo;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size: xx-large;">
+            Upload the data
+        </label>
+        <input
+        type="file"
+        class="form-control"
+        name="file"
+        id="file"
+        placeholder="Enter data to predict...">
+        
+    </div>
+    <br/>
+    <button type="submit" class="btn btn-primary">Predict</button>
+    
+    
+</form>
+
+
+{% endblock %}

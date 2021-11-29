@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}SEARCH{% endblock %}
+
+{% block content %}
+
+<div>
+    <h1> Predicted Results are</h1>
+    <br/>
+    <br/>
+    <ol>
+        {% for i in results%}
+        <li style="color: black;">
+            <h3>{{i}}</h3>
+            <br/>
+        </li>
+        {% endfor %}
+    </ol>
+</div>
+{% endblock %}
