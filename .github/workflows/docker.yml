@@ -27,7 +27,7 @@ jobs:
       - name: Docker Login
         run: docker login --username '${{secrets.DOCKER_LOGIN}}' --password '${{secrets.DOCKER_PASSWORD}}'
       - name: Tag the Docker Image
-        run: docker tag ${{env.IMAGE_NAME}}:latest ${{env.IMAGE_NAME}}:latest
+        run: docker tag ${{env.IMAGE_NAME}}:latest ${{secrets.DOCKER_LOGIN}}/${{env.IMAGE_NAME}}:latest
       - name: Push the Docker Image
         run: docker push ${{secrets.DOCKER_LOGIN}}/${{env.IMAGE_NAME}}:latest
     
